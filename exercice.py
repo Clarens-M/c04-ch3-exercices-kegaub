@@ -35,6 +35,36 @@ def to_celsius(temperature: float) -> float:
 def to_farenheit(temperature: float) -> float:
     return temperature * 1.8 + 32
 
+def puissance(V, R):
+    P = V**2 / R
+    return P
+
+def orthogonalité(X1, Y1, X2, Y2):
+    O = X1*X2 + Y1*Y2
+    if 0 ==0:
+        return True
+    else:
+        return False
+
+def moyenne_positive(liste):
+    m = 0
+    for i in range(0, len(liste)):
+        m = m + liste[i]
+    m = m / len(liste)
+    return m
+
+def décomp_prix(cout):
+    centaine = cout // 100
+    reste1 = cout % 100
+    vingtaine = reste1 // 20
+    reste2 = reste1 % 20
+    dizaine = reste2 // 10
+    reste3 = reste2 % 10
+    cinq = reste3 // 5
+    unités = reste3 % 5
+    décompo = [centaine, vingtaine, dizaine, cinq, unités]
+    return décompo
+
 
 def main() -> None:
     print(f"La racine carré de 144 est : {square_root(144)}")
